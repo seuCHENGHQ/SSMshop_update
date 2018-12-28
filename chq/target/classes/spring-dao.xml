@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 若jdbc的链接用户名和密码不加密的话，用这个就行了 -->
+	<!-- <context:property-placeholder location="classpath:jdbc.properties"/> -->
+	<!-- 若jdbc的连接用户名和密码加密，需要自己写一个类来继承PropertyPlaceholderConfigurer，在其中重写convertProperty方法，来实现解密 -->
+	<bean
+		class="com.chq.ssmshop.util.EncryptPropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+			</list>
+		</property>
+		<property name="fileEncoding">
+			<value>UTF-8</value>
+		</property>
+	</bean>
+
+	<bean id="dataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<!-- 配置数据库连接池属性 -->
+		<property name="driverClass" value="${jdbc.driver}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+
+		<!-- c3p0的私有属性 -->
+		<property name="maxPoolSize" value="30" />
+		<property name="minPoolSize" value="10" />
+		<!-- 关闭连接后不自动提交(commit) -->
+		<property name="autoCommitOnClose" value="false" />
+		<!-- 获取连接超时时间 -->
+		<property name="checkoutTimeout" value="10000" />
+		<!-- 当获取连接失败重试次数 -->
+		<property name="acquireRetryAttempts" value="2" />
+	</bean>
+
+	<!-- 3.配置SqlSessionFactory对象 -->
+	<!-- 其实SqlSessionFactory其中配置的是MyBatis的运行环境，包括了MyBatis所需的一切参数 -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 注入数据库连接池 -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- 配置MyBatis全局配置文件:mybatis-config.xml -->
+		<property name="configLocation"
+			value="classpath:mybatis-config.xml" />
+		<!-- 扫描entity包，使用别名，类名的首字母小写就是它的别名 -->
+		<!-- 其实entity就是SSM那本书里面的POJO -->
+		<property name="typeAliasesPackage"
+			value="com.chq.ssmshop.entity"></property>
+		<!-- 扫描sql配置文件 mapper所需的xml文件 -->
+		<property name="mapperLocations"
+			value="classpath:mapper/*.xml"></property>
+	</bean>
+
+	<!-- 4.配置扫描Dao接口包，动态实现Dao接口，注入到Spring容器中 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 注入sqlSessionFactory -->
+		<property name="sqlSessionFactoryBeanName"
+			value="sqlSessionFactory" />
+		<!-- 给出需要扫描Dao接口的包所在的位置 -->
+		<property name="basePackage" value="com.chq.ssmshop.dao" />
+	</bean>
+</beans>
