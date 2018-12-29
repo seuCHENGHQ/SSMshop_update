@@ -83,7 +83,11 @@ public class DESUtil {
 //		System.out.println(encryptStr);
 //		String decryptStr = DESUtil.getDecryptString(encryptStr);
 //		System.out.println(decryptStr);
-		String encryptStr = DESUtil.getEncryptString("root");
+//		String encryptStr = DESUtil.getEncryptString("root");
+//		System.out.println(encryptStr);
+//		String decryptStr = DESUtil.getDecryptString(encryptStr);
+//		System.out.println(decryptStr);
+		String encryptStr = DESUtil.getEncryptString("Cheng950112!");
 		System.out.println(encryptStr);
 		String decryptStr = DESUtil.getDecryptString(encryptStr);
 		System.out.println(decryptStr);

@@ -31,7 +31,7 @@ public class ShopDaoTest extends BaseTest {
 		shop.setArea(area);
 
 		ShopCategory shopCategory = new ShopCategory();
-		shopCategory.setShopCategoryId(1);
+		shopCategory.setShopCategoryId(12);
 		shop.setShopCategory(shopCategory);
 
 		shop.setShopName("testShop1");
@@ -49,10 +49,10 @@ public class ShopDaoTest extends BaseTest {
 		assertEquals(affectedRow, 1);
 	}
 
-//	@Test
+	@Test
 	public void updateShopTest() {
 		Shop shop = new Shop();
-		shop.setShopId(7);
+		shop.setShopId(19);
 
 		PersonInfo owner = new PersonInfo();
 		owner.setUserId(1);
@@ -63,7 +63,7 @@ public class ShopDaoTest extends BaseTest {
 		shop.setArea(area);
 
 		ShopCategory shopCategory = new ShopCategory();
-		shopCategory.setShopCategoryId(1);
+		shopCategory.setShopCategoryId(13);
 		shop.setShopCategory(shopCategory);
 
 		shop.setShopName("testShop1");
@@ -98,7 +98,7 @@ public class ShopDaoTest extends BaseTest {
 		assertEquals(8, shopList.size());
 	}
 
-	@Test
+//	@Test
 	public void queryShopListTest() {
 		Shop shopCondition = new Shop();
 		

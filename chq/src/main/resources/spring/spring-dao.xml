@@ -22,14 +22,10 @@
 		</property>
 	</bean>
 
-	<bean id="dataSource"
+	<!-- 在bean中配置abstract属性为”true”,则spring容器不会为该类创建对象。 -->
+	<bean id="abstractDataSource" abstract="true"
+		destroy-method="close"
 		class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<!-- 配置数据库连接池属性 -->
-		<property name="driverClass" value="${jdbc.driver}" />
-		<property name="jdbcUrl" value="${jdbc.url}" />
-		<property name="user" value="${jdbc.username}" />
-		<property name="password" value="${jdbc.password}" />
-
 		<!-- c3p0的私有属性 -->
 		<property name="maxPoolSize" value="30" />
 		<property name="minPoolSize" value="10" />
@@ -40,6 +36,38 @@
 		<!-- 当获取连接失败重试次数 -->
 		<property name="acquireRetryAttempts" value="2" />
 	</bean>
+	
+	<!-- 在bean中配置parent属性，则可以让该bean继承父类属性的值。 -->
+	<bean id="master" parent="abstractDataSource">
+		<!-- 配置数据库连接池属性 -->
+		<property name="driverClass" value="${jdbc.driver}" />
+		<property name="jdbcUrl" value="${jdbc.master.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<bean id="slave" parent="abstractDataSource">
+		<!-- 配置数据库连接池属性 -->
+		<property name="driverClass" value="${jdbc.driver}" />
+		<property name="jdbcUrl" value="${jdbc.slave.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<bean id="dataSource"
+		class="com.chq.ssmshop.dao.split.DynamicDataSource">
+		<property name="targetDataSources">
+			<map>
+				<entry value-ref="master" key="master"></entry>
+				<entry key="slave" value-ref="slave"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 这里启用懒加载 -->
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy"> 
+		<property name="targetDataSource"> <ref bean="dynamicDataSource" /> </property> 
+		</bean> -->
 
 	<!-- 3.配置SqlSessionFactory对象 -->
 	<!-- 其实SqlSessionFactory其中配置的是MyBatis的运行环境，包括了MyBatis所需的一切参数 -->
