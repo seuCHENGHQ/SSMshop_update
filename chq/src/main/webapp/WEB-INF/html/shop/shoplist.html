@@ -27,11 +27,16 @@
 <!-- 添加本页面需要的js文件 -->
 <script type="text/javascript" src="../resources/js/shop/shoplist.js"
 	charset="utf-8"></script>
-
+<script type="text/javascript"
+	src="../resources/js/common/getUrlParameter.js" charset="utf-8"></script>
 </head>
 
 <body>
 	<header class="bar bar-nav">
+		<a id="return" class="button button-link button-nav pull-left back"
+			href="/SSMshop/frontend/mainpage"> <span class="icon icon-left"></span>
+			返回
+		</a>
 		<h1 class="title">商店列表</h1>
 	</header>
 	<div class="content">
@@ -58,8 +63,7 @@
 		<div class="content-block">
 			<div class="row">
 				<div class="col-50">
-					<a href="" id="log-out"
-						class="button button-big button-fill button-danger">返回</a>
+					<a href="/SSMshop/frontend/mainpage" class="button button-big button-fill button-danger">返回</a>
 				</div>
 				<div class="col-50">
 					<a href="/SSMshop/shopadmin/register"

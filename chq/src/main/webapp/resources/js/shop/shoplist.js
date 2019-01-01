@@ -6,7 +6,8 @@ $(function() {
 	/*
 	 * 这里等到账户系统弄好了之后要删掉，从session中取对应的用户id
 	 */
-	var userId = 1;
+	// var userId = 1;
+	var userId = getQueryString('userId');
 	var getShopListByOwnerUrl = '/SSMshop/shopadmin/getshoplistbyowner/'
 			+ userId;
 	var getUserInfoUrl = '/SSMshop/personInfoAdmin/getPersonInfo/' + userId;

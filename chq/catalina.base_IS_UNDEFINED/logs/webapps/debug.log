@@ -1,26 +1,150 @@
-2018-12-29 14:24:31:429 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.AreaDao.listArea] use [slave] Strategy, SqlCommanType [SELECT]..
-2018-12-29 14:24:31:442 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
-2018-12-29 14:25:49:194 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.AreaDao.listArea] use [slave] Strategy, SqlCommanType [SELECT]..
-2018-12-29 14:25:49:196 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
-2018-12-29 14:25:51:405 [main] DEBUG com.chq.ssmshop.dao.AreaDao.listArea - ==>  Preparing: select * from tb_area order by priority desc; 
-2018-12-29 14:25:51:423 [main] DEBUG com.chq.ssmshop.dao.AreaDao.listArea - ==> Parameters: 
-2018-12-29 14:25:51:589 [main] DEBUG com.chq.ssmshop.dao.AreaDao.listArea - <==      Total: 3
-2018-12-29 14:58:49:493 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.ShopDao.insertShop] use [master] Strategy, SqlCommanType [INSERT]..
-2018-12-29 14:58:49:495 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
-2018-12-29 14:58:50:517 [main] DEBUG com.chq.ssmshop.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop( owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,last_edit_time,enable_status,advice ) values( ?,?,?,?,?,?,?, ?,?,?,?,?,? ) 
-2018-12-29 14:58:50:541 [main] DEBUG com.chq.ssmshop.dao.ShopDao.insertShop - ==> Parameters: 1(Integer), 1(Integer), 1(Integer), testShop1(String), descTest(String), addrTest(String), 13027710396(String), 这里将来要放店铺的展示图片所在的路径(String), 0(Integer), 2018-12-29 14:58:49.482(Timestamp), 2018-12-29 14:58:49.482(Timestamp), 0(Integer), adviceTest(String)
-2018-12-29 15:00:18:548 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.ShopDao.insertShop] use [master] Strategy, SqlCommanType [INSERT]..
-2018-12-29 15:00:18:550 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
-2018-12-29 15:00:19:169 [main] DEBUG com.chq.ssmshop.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop( owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,last_edit_time,enable_status,advice ) values( ?,?,?,?,?,?,?, ?,?,?,?,?,? ) 
-2018-12-29 15:00:19:198 [main] DEBUG com.chq.ssmshop.dao.ShopDao.insertShop - ==> Parameters: 1(Integer), 1(Integer), 12(Integer), testShop1(String), descTest(String), addrTest(String), 13027710396(String), 这里将来要放店铺的展示图片所在的路径(String), 0(Integer), 2018-12-29 15:00:18.538(Timestamp), 2018-12-29 15:00:18.538(Timestamp), 0(Integer), adviceTest(String)
-2018-12-29 15:00:19:295 [main] DEBUG com.chq.ssmshop.dao.ShopDao.insertShop - <==    Updates: 1
-2018-12-29 15:10:02:446 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.ShopDao.insertShop] use [master] Strategy, SqlCommanType [INSERT]..
-2018-12-29 15:10:02:449 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
-2018-12-29 15:10:10:569 [main] DEBUG com.chq.ssmshop.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop( owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,last_edit_time,enable_status,advice ) values( ?,?,?,?,?,?,?, ?,?,?,?,?,? ) 
-2018-12-29 15:10:10:605 [main] DEBUG com.chq.ssmshop.dao.ShopDao.insertShop - ==> Parameters: 1(Integer), 1(Integer), 12(Integer), testShop1(String), descTest(String), addrTest(String), 13027710396(String), 这里将来要放店铺的展示图片所在的路径(String), 0(Integer), 2018-12-29 15:10:02.435(Timestamp), 2018-12-29 15:10:02.435(Timestamp), 0(Integer), adviceTest(String)
-2018-12-29 15:10:10:746 [main] DEBUG com.chq.ssmshop.dao.ShopDao.insertShop - <==    Updates: 1
-2018-12-29 15:34:43:927 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.ShopDao.updateShop] use [master] Strategy, SqlCommanType [UPDATE]..
-2018-12-29 15:34:43:930 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
-2018-12-29 15:34:44:623 [main] DEBUG com.chq.ssmshop.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET area_id=?, shop_category_id=?, shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, priority=?, last_edit_time=? where shop_id=? 
-2018-12-29 15:34:44:643 [main] DEBUG com.chq.ssmshop.dao.ShopDao.updateShop - ==> Parameters: 1(Integer), 13(Integer), testShop1(String), descTest(String), addrTest(String), 13027710396(String), 这里将来要放店铺的展示图片所在的路径updateTest(String), 0(Integer), 2018-12-29 15:34:43.917(Timestamp), 19(Integer)
-2018-12-29 15:34:44:743 [main] DEBUG com.chq.ssmshop.dao.ShopDao.updateShop - <==    Updates: 1
+2018-12-31 16:08:10:352 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.PersonInfoDao.insertPersonInfo] use [master] Strategy, SqlCommanType [INSERT]..
+2018-12-31 16:08:10:357 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 16:08:10:364 [main] DEBUG com.chq.ssmshop.dao.PersonInfoDao.insertPersonInfo - ==>  Preparing: INSERT INTO tb_person_info(name,gender,email,profile_img,user_type,create_time,last_edit_time,enable_status) VALUES (?,?,?,?,?, ?,?,?) 
+2018-12-31 16:08:10:382 [main] DEBUG com.chq.ssmshop.dao.PersonInfoDao.insertPersonInfo - ==> Parameters: localAuthTest(String), null, null, null, 0(Integer), 2018-12-31 16:08:10.323(Timestamp), 2018-12-31 16:08:10.323(Timestamp), 0(Integer)
+2018-12-31 16:08:10:468 [main] DEBUG com.chq.ssmshop.dao.PersonInfoDao.insertPersonInfo - <==    Updates: 1
+2018-12-31 16:08:10:481 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.insertLocalAuth] use [master] Strategy, SqlCommanType [INSERT]..
+2018-12-31 16:08:10:481 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 16:08:10:482 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.insertLocalAuth - ==>  Preparing: insert into tb_local_auth( username,password,create_time,last_edit_time,person_info )values( ?,?,?,?,? ) 
+2018-12-31 16:08:10:490 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.insertLocalAuth - ==> Parameters: insertTest(String), q2lse5be2bylq9b59550s555bebl55ss(String), 2018-12-31 16:08:10.323(Timestamp), 2018-12-31 16:08:10.323(Timestamp), 8(Integer)
+2018-12-31 16:08:10:688 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.insertLocalAuth - <==    Updates: 1
+2018-12-31 16:17:55:079 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:17:55:081 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:17:55:542 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 16:17:55:566 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 8(Long)
+2018-12-31 16:17:55:601 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1
+2018-12-31 16:17:55:621 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth] use [master] Strategy, SqlCommanType [UPDATE]..
+2018-12-31 16:17:55:621 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 16:17:55:645 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth SET password=?, last_edit_time=? where person_info=? and username=? and password=? 
+2018-12-31 16:17:55:647 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: 2y02sq665qs5b25262yq92lsb0l0q555(String), 2018-12-31 16:17:55.62(Timestamp), 8(Long), insertTest(String), q2lse5be2bylq9b59550s555bebl55ss(String)
+2018-12-31 16:17:55:671 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 1
+2018-12-31 16:17:55:672 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [master] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:17:55:672 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 16:17:55:672 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 16:17:55:672 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 8(Long)
+2018-12-31 16:17:55:686 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1
+2018-12-31 16:20:23:792 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:20:23:796 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:20:24:214 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 16:20:24:243 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 8(Long)
+2018-12-31 16:20:24:272 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1
+2018-12-31 16:20:49:394 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth] use [master] Strategy, SqlCommanType [UPDATE]..
+2018-12-31 16:20:49:398 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 16:20:50:683 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth SET password=?, last_edit_time=? where person_info=? and username=? and password=? 
+2018-12-31 16:20:50:703 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: 2y02sq665qs5b25262yq92lsb0l0q555(String), 2018-12-31 16:20:49.308(Timestamp), 8(Long), insertTest(String), q2lse5be2bylq9b59550s555bebl55ss(String)
+2018-12-31 16:20:50:730 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 0
+2018-12-31 16:28:02:763 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:28:02:766 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:28:04:249 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 16:28:04:271 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 8(Long)
+2018-12-31 16:28:04:298 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1
+2018-12-31 16:28:04:302 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserNameAndPwd] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:28:04:302 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:28:04:302 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.username=? and la.password=? 
+2018-12-31 16:28:04:303 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==> Parameters: insertTest(String), q2lse5be2bylq9b59550s555bebl55ss(String)
+2018-12-31 16:28:04:318 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - <==      Total: 0
+2018-12-31 16:31:24:632 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:31:24:634 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:31:25:076 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 16:31:25:114 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 8(Long)
+2018-12-31 16:31:25:298 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1
+2018-12-31 16:31:25:304 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserNameAndPwd] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:31:25:304 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:31:25:304 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.username=? and la.password=? 
+2018-12-31 16:31:25:304 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==> Parameters: insertTest(String), q2lse5be2bylq9b59550s555bebl55ss(String)
+2018-12-31 16:31:25:318 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - <==      Total: 0
+2018-12-31 16:38:38:823 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:38:38:826 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:38:39:340 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 16:38:39:375 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 8(Long)
+2018-12-31 16:38:39:558 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1
+2018-12-31 16:38:39:566 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserNameAndPwd] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:38:39:566 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:38:39:566 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.username=? and la.password=? 
+2018-12-31 16:38:39:567 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==> Parameters: insertTest(String), q2lse5be2bylq9b59550s555bebl55ss(String)
+2018-12-31 16:38:39:581 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - <==      Total: 0
+2018-12-31 16:39:22:842 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:39:22:844 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:39:23:187 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 16:39:23:221 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 8(Long)
+2018-12-31 16:39:23:247 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1
+2018-12-31 16:39:23:252 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserNameAndPwd] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:39:23:252 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:39:23:252 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.username=? and la.password=? 
+2018-12-31 16:39:23:253 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==> Parameters: insertTest(String), q2lse5be2bylq9b59550s555bebl55ss(String)
+2018-12-31 16:39:23:276 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - <==      Total: 0
+2018-12-31 16:39:45:448 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:39:45:451 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:39:45:812 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 16:39:45:849 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 8(Long)
+2018-12-31 16:39:45:890 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1
+2018-12-31 16:39:45:894 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserNameAndPwd] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:39:45:895 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:39:45:895 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.username=? and la.password=? 
+2018-12-31 16:39:45:895 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==> Parameters: insertTest(String), q2lse5be2bylq9b59550s555bebl55ss(String)
+2018-12-31 16:39:45:923 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - <==      Total: 0
+2018-12-31 16:49:29:796 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:49:29:799 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:49:30:231 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 16:49:30:266 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 8(Long)
+2018-12-31 16:49:30:291 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1
+2018-12-31 16:49:30:295 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserNameAndPwd] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:49:30:296 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:49:30:296 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.username=? and la.password=? 
+2018-12-31 16:49:30:296 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==> Parameters: insertTest(String), 2y02sq665qs5b25262yq92lsb0l0q555(String)
+2018-12-31 16:49:30:314 [main] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - <==      Total: 1
+2018-12-31 16:50:20:963 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:50:20:965 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 16:50:21:374 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 16:50:21:410 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 8(Long)
+2018-12-31 16:50:21:435 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1
+2018-12-31 16:50:21:455 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth] use [master] Strategy, SqlCommanType [UPDATE]..
+2018-12-31 16:50:21:455 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 16:50:21:471 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth SET password=?, last_edit_time=? where person_info=? and username=? and password=? 
+2018-12-31 16:50:21:472 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: 6e5969b5qb52s6s2662e6e6b9662l299(String), 2018-12-31 16:50:21.454(Timestamp), 8(Long), insertTest(String), 2y02sq665qs5b25262yq92lsb0l0q555(String)
+2018-12-31 16:50:21:639 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 1
+2018-12-31 16:50:21:640 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [master] Strategy, SqlCommanType [SELECT]..
+2018-12-31 16:50:21:640 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 16:50:21:640 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 16:50:21:641 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 8(Long)
+2018-12-31 16:50:21:659 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1
+2018-12-31 17:07:50:141 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [slave] Strategy, SqlCommanType [SELECT]..
+2018-12-31 17:07:50:144 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2018-12-31 17:07:50:552 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 17:07:50:597 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 8(Long)
+2018-12-31 17:07:50:621 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1
+2018-12-31 17:07:50:646 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth] use [master] Strategy, SqlCommanType [UPDATE]..
+2018-12-31 17:07:50:646 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 17:07:50:661 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth SET password=?, last_edit_time=? where person_info=? and username=? and password=? 
+2018-12-31 17:07:50:663 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: 6e5969b5qb52s6s2662e6e6b9662l299(String), 2018-12-31 17:07:50.645(Timestamp), 8(Long), insertTest(String), 2y02sq665qs5b25262yq92lsb0l0q555(String)
+2018-12-31 17:07:50:687 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 0
+2018-12-31 17:09:06:740 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.PersonInfoDao.insertPersonInfo] use [master] Strategy, SqlCommanType [INSERT]..
+2018-12-31 17:09:06:744 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 17:09:06:752 [main] DEBUG com.chq.ssmshop.dao.PersonInfoDao.insertPersonInfo - ==>  Preparing: INSERT INTO tb_person_info(name,gender,email,profile_img,user_type,create_time,last_edit_time,enable_status) VALUES (?,?,?,?,?, ?,?,?) 
+2018-12-31 17:09:06:772 [main] DEBUG com.chq.ssmshop.dao.PersonInfoDao.insertPersonInfo - ==> Parameters: localAuthTest(String), null, null, null, 0(Integer), 2018-12-31 17:09:06.711(Timestamp), 2018-12-31 17:09:06.711(Timestamp), 0(Integer)
+2018-12-31 17:09:06:901 [main] DEBUG com.chq.ssmshop.dao.PersonInfoDao.insertPersonInfo - <==    Updates: 1
+2018-12-31 17:09:06:915 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.insertLocalAuth] use [master] Strategy, SqlCommanType [INSERT]..
+2018-12-31 17:09:06:915 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 17:09:06:915 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.insertLocalAuth - ==>  Preparing: insert into tb_local_auth( username,password,create_time,last_edit_time,person_info )values( ?,?,?,?,? ) 
+2018-12-31 17:09:06:923 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.insertLocalAuth - ==> Parameters: insertTest(String), q2lse5be2bylq9b59550s555bebl55ss(String), 2018-12-31 17:09:06.711(Timestamp), 2018-12-31 17:09:06.711(Timestamp), 9(Integer)
+2018-12-31 17:09:07:076 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.insertLocalAuth - <==    Updates: 1
+2018-12-31 17:15:27:449 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth] use [master] Strategy, SqlCommanType [UPDATE]..
+2018-12-31 17:15:27:452 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 17:15:27:478 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth SET password=?, last_edit_time=? where person_info=? and username=? and password=? 
+2018-12-31 17:15:27:494 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: 2y02sq665qs5b25262yq92lsb0l0q555(String), 2018-12-31 17:15:27.416(Timestamp), 9(Long), insertTest(String), q2lse5be2bylq9b59550s555bebl55ss(String)
+2018-12-31 17:15:27:604 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 1
+2018-12-31 17:15:27:605 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [master] Strategy, SqlCommanType [SELECT]..
+2018-12-31 17:15:27:606 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 17:15:27:609 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 17:15:27:610 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 9(Long)
+2018-12-31 17:15:27:696 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1
+2018-12-31 17:16:19:486 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth] use [master] Strategy, SqlCommanType [UPDATE]..
+2018-12-31 17:16:19:490 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 17:16:19:521 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth SET password=?, last_edit_time=? where person_info=? and username=? and password=? 
+2018-12-31 17:16:19:536 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: q2lse5be2bylq9b59550s555bebl55ss(String), 2018-12-31 17:16:19.45(Timestamp), 9(Long), insertTest(String), 2y02sq665qs5b25262yq92lsb0l0q555(String)
+2018-12-31 17:16:19:628 [main] DEBUG com.chq.ssmshop.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 1
+2018-12-31 17:16:19:629 [main] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId] use [master] Strategy, SqlCommanType [SELECT]..
+2018-12-31 17:16:19:630 [main] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2018-12-31 17:16:19:631 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.person_info=? 
+2018-12-31 17:16:19:633 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - ==> Parameters: 9(Long)
+2018-12-31 17:16:21:221 [main] DEBUG c.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserId - <==      Total: 1

@@ -48,6 +48,11 @@ public class DynamicDataSourceInterceptor implements Interceptor {
 				// 因此在这里我们仍然要为该select操作指定主库来进行相应的查询操作
 				// 在mybatis进行insert操作之后，会调用select last_insert_id()的方法来查询刚插入的这条记录的主键id，并进行回填
 				if (ms.getId().contains(SelectKeyGenerator.SELECT_KEY_SUFFIX)) {
+					/*
+					 * 每个MappedStatement都保存了(select|insert|update|delete)中的一条SQL语句相关的信息 因此调用select
+					 * last_insert_id()这条语句也会被封装在一个MappedStatement中
+					 * 这里就是在检测这里的MappedStatement是不是封装select last_insert_id()这条语句的MappedStatement
+					 */
 					lookupKey = DynamicDataSourceHolder.DB_MASTER;
 				} else {
 					// 这里获取Executor要执行的sql语句

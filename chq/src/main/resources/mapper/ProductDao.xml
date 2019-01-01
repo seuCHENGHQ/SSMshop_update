@@ -73,12 +73,11 @@
 		ts.create_time,
 		ts.last_edit_time,
 		ts.enable_status,
-		ts.advice,
+		ts.advice
 		FROM
 		tb_product AS tp,
 		tb_product_category AS tpc,
-		tb_shop AS
-		ts
+		tb_shop AS ts
 		WHERE
 		tp.shop_id=#{shopId}
 		ORDER BY
@@ -198,7 +197,7 @@
 		priority DESC
 		LIMIT #{rowIndex},#{pageSize};
 	</select>
-	
+
 	<select id="queryProductCount" resultType="int">
 		SELECT count(1) FROM tb_product
 		<where>

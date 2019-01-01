@@ -5,8 +5,9 @@ package com.chq.ssmshop;
 
 import org.apache.ibatis.binding.MapperProxy;
 import org.apache.ibatis.binding.MapperProxyFactory;
-//import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.MapperFactoryBean;
+import org.springframework.data.redis.core.RedisTemplate;
 //import org.mybatis.spring.mapper.MapperScannerConfigurer;
 
 public class Test {
@@ -17,5 +18,6 @@ public class Test {
 //		SqlSessionFactoryBean
 //		LazyConnectionDataSourceProxy
 //		Executor
+//		RedisTemplate<K, V>;
 	}
 }

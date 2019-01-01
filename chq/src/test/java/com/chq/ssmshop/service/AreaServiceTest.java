@@ -11,13 +11,18 @@ import com.chq.ssmshop.BaseTest;
 import com.chq.ssmshop.entity.Area;
 
 public class AreaServiceTest extends BaseTest {
-	
+
 	@Autowired
 	private AreaService areaService;
-	
+	@Autowired
+	private CacheService cacheService;
+
 	@Test
 	public void queryListTest() {
 		List<Area> result = areaService.queryArea();
 		assertEquals(result.size(), 3);
+		cacheService.removeFromCache(AreaService.AREALISTKEY);
+		result = areaService.queryArea();
 	}
+
 }
