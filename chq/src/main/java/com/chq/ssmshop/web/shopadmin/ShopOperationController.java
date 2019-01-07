@@ -1,6 +1,7 @@
 package com.chq.ssmshop.web.shopadmin;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,17 +58,19 @@ public class ShopOperationController {
 
 	@RequestMapping("/getshopbyid/{shopId}")
 	@ResponseBody
-	public Map<String, Object> getShopInfoById(@PathVariable("shopId") Integer shopId) {
+	public Map<String, Object> getShopInfoById(@PathVariable("shopId") Integer shopId, HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<>();
 		ShopExecution se = shopService.queryShop(shopId);
-		if(se.getState()==ShopExecutionEnum.SUCCESS.getState()) {
+		if (se.getState() == ShopExecutionEnum.SUCCESS.getState()) {
 			modelMap.put("success", true);
-			modelMap.put("shop",se.getShop());
-		}else {
+			modelMap.put("shop", se.getShop());
+			// 将shop信息放到session中，为了之后的拦截器的权限验证做准备
+			request.getSession().setAttribute("currentShop", se.getShop());
+		} else {
 			modelMap.put("success", false);
 			modelMap.put("errMsg", se.getStateInfo());
 		}
-		
+
 		return modelMap;
 	}
 
@@ -119,18 +122,20 @@ public class ShopOperationController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			/*
-			 * 因为账号系统还未开发完成，因此这里先预先填写一个店铺的主人，等到账户功能开发好了，这里再删除
-			 */
-			PersonInfo owner = new PersonInfo();
-			owner.setUserId(1);
-			shop.setOwner(owner);
-			/*
-			 * 
-			 */
+			// 取出目前已经登录好的用户，将店铺注册到他的名下
+			PersonInfo owner = (PersonInfo) request.getAttribute("user");
+
 			ShopExecution se = shopService.registerShop(shop, imageHolder);
 			if (se.getState() == ShopExecutionEnum.SUCCESS.getState()) {
 				modelAndView.put("success", true);
+				// 将session的shopList取出，将刚创建的这个店铺也添加进去，因为当前用户当然对他创建出来的店铺有操作权限
+				List<Shop> shopList = (List<Shop>) request.getSession().getAttribute("shopList");
+				if (shopList == null || shopList.size() == 0) {
+					shopList = new ArrayList<>();
+				}
+				// 添加完成之后再存放到session中
+				shopList.add(se.getShop());
+				request.setAttribute("shopList", shopList);
 			} else {
 				modelAndView.put("success", false);
 				modelAndView.put("errMsg", se.getStateInfo());
@@ -177,8 +182,8 @@ public class ShopOperationController {
 			MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
 			shopImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("shopImg");
 		}
-		
-		if(shopImg==null) {
+
+		if (shopImg == null) {
 			modelMap.put("success", false);
 			modelMap.put("errMsg", "上传图片不能为空！");
 			return modelMap;
@@ -218,14 +223,17 @@ public class ShopOperationController {
 		return modelMap;
 	}
 
-	@RequestMapping(value="/getshoplistbyowner/{ownerId}" ,method=RequestMethod.GET)
+	@RequestMapping(value = "/getshoplistbyowner/{ownerId}", method = RequestMethod.GET)
 	@ResponseBody
-	public Map<String, Object> getShopListByOwnerId(@PathVariable("ownerId") Integer ownerId){
+	public Map<String, Object> getShopListByOwnerId(@PathVariable("ownerId") Integer ownerId,
+			HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<>();
 		ShopExecution se = shopService.queryShopByOwnerId(ownerId);
+		// 将shopList放到session中，为了拦截器验证权限做准备
+		request.getSession().setAttribute("shopList", se.getShopList());
 		modelMap.put("success", true);
 		modelMap.put("shopList", se.getShopList());
-		
+
 		return modelMap;
 	}
 }
